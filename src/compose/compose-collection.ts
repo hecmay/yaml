@@ -115,14 +115,7 @@ export function composeCollection(
           `${kt.tag} used for ${expType} collection, but expects ${kt.collection ?? 'scalar'}`,
           true
         )
-      } else {
-        onError(
-          tagToken,
-          'TAG_RESOLVE_FAILED',
-          `Unresolved tag: ${tagName}`,
-          true
-        )
-      }
+      } 
       return resolveCollection(CN, ctx, token, onError, tagName)
     }
   }

@@ -145,6 +145,7 @@ export class YAMLMap<K = unknown, V = unknown> extends Collection {
     const map = Type ? new Type() : ctx?.mapAsMap ? new Map() : {}
     if (ctx?.onCreate) ctx.onCreate(map)
     for (const item of this.items) addPairToJSMap(ctx, map, item)
+    if (this.tag) addPairToJSMap(ctx, map, new Pair('!type', this.tag))
     return map
   }
 
